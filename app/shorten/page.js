@@ -49,7 +49,8 @@ const Shorten = () => {
       }
 
       // If successful, proceed with local state updates
-      const fullGeneratedUrl = `http:/${data.shortCode}`; // Use data.shortCode from backend
+      const fullGeneratedUrl = `${window.location.origin}/${data.shortCode}`;
+
 
       // Check if this short URL is already used in history (local check, backend also checks)
       const existing = history.find((link) => link.endsWith(`/${data.shortCode}`));
